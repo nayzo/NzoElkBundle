@@ -1,0 +1,46 @@
+{
+    "name": "nzo/elk-bundle",
+    "type": "symfony-bundle",
+    "description": "A Symfony bundle to manage logs on the ELK Stack",
+    "keywords": ["ELK", "Elasticsearch", "Logstash", "Kibana", "Log"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ala Eddine Khefifi",
+            "email": "alakhefifi@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Nzo\\ElkBundle\\": ""
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Nzo\\ElkBundle\\Tests\\": "/tests/"
+        }
+    },
+    "require": {
+        "php": ">=7.2.5",
+        "nzo/url-encryptor-bundle": "^6.0",
+        "symfony/framework-bundle": "^4.4 || ^5.0",
+        "symfony/monolog-bundle": "^3.5",
+        "symfony/config": "^4.4 || ^5.0",
+        "minwork/array": "^1.13"
+    },
+    "require-dev": {
+        "symfony/phpunit-bridge": "^4.4 || ^5.0",
+        "phpunit/phpunit": "^6.5 || ^8.5"
+    },
+    "minimum-stability": "stable",
+    "conflict": {
+        "symfony/dependency-injection": "<4.4",
+        "symfony/http-kernel": "<4.4"
+    },
+    "extra": {
+        "symfony": {
+            "allow-contrib": false,
+            "require": "^4.4 || ^5.0"
+        }
+    }
+}

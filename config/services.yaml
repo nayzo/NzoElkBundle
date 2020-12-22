@@ -1,0 +1,20 @@
+services:
+
+    nzo.elk.monolog.processor:
+        class: Nzo\ElkBundle\Logger\ElkLogProcessor
+        arguments:
+            - '@request_stack'
+            - '@nzo.elk.encryptor'
+            - '%elk.app_name%'
+            - '%elk.app_environment%'
+        tags:
+            - { name: monolog.processor, method: processRecord }
+
+    nzo.elk.monolog.formatter:
+        class: Monolog\Formatter\JsonFormatter
+
+    nzo.elk.encryptor:
+        class: Nzo\ElkBundle\Encryptor\ElkEncryptor
+        arguments:
+            - '@nzo_encryptor'
+            - '%elk.log_encryptor%'
